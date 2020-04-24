@@ -182,10 +182,10 @@ class Datamanager:
 
                 X.append(x)
                 Y.append(y)
-                self.X = np.asarray(X)  # X, [total_sample,window] or [total_sample,1]
-                self.Y = np.asarray(Y)  # Y, [total_sample,1] or [total_sample,window]
-                self.total_samples = len(self.X)
-                self.total_batch = int(np.ceil(self.total_samples/self.batch_size))  #往上取整
+            self.X = np.asarray(X)  # X, [total_sample,window] or [total_sample,1]
+            self.Y = np.asarray(Y)  # Y, [total_sample,1] or [total_sample,window]
+            self.total_samples = len(self.X)
+            self.total_batch = int(np.ceil(self.total_samples/self.batch_size))  #往上取整
 
     def __iter__(self):
         #产生序列

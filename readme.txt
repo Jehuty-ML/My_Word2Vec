@@ -24,3 +24,11 @@
 5.训练
     a. 搭建大框架
     b. 参照算法原理实现
+        B: batch_size,
+        T: window, 窗口大小
+        V: vocab_size, 词表词汇数量
+        E: embedding_size, 词向量维度
+    c. 代码整理
+    d. 运行命令：
+        python train.py --data_path=./data/train.cbow.data --dictionary_path=./data/dictionary.json --network_name=w2v --embedding_size=128 --structure=cbow --window=4 --cbow_mean=True --max_epoch=10 --batch_size=1000 --num_sampled=100 --optimizer_name=adam --learning_rate=0.001 --regularization=0.00001 --checkpoint_dir=./running/model/cbow --checkpoint_per_batch=100 --summary_dir=./running/graph/cbow
+        python train.py --data_path=./data/train.skipgram.data --dictionary_path=./data/dictionary.json --network_name=w2v --embedding_size=128 --structure=skipgram --window=4 --max_epoch=10 --batch_size=1000 --num_sampled=100 --optimizer_name=adam --learning_rate=0.001 --regularization=0.00001 --checkpoint_dir=./running/model/skipgram --checkpoint_per_batch=100 --summary_dir=./running/graph/skipgram
