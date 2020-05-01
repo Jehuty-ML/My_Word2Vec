@@ -1,12 +1,17 @@
 import tensorflow as tf
 import numpy as np
 import os
+from nets.base import NetWork
 
-class CBOWNetWork:
+
+class CBOWNetWork(NetWork):
     def __init__(self, name='W2V', vocab_size=19000, embedding_size=128, is_mean='true', window=4,
                  num_sampled=100, regularization=0.001, optimizer_name='adam', learning_rate=0.001,
                  checkpoint_dir="./running/model"
                  ):
+        NetWork.__init__(self, name=name, vocab_size=vocab_size, embedding_size=embedding_size, is_mean=is_mean, window=window,
+                 num_sampled=num_sampled, regularization=regularization, optimizer_name=optimizer_name, learning_rate=learning_rate,
+                 checkpoint_dir=checkpoint_dir)
         self.name = name
         self.vocab_size = vocab_size
         self.embedding_size = embedding_size

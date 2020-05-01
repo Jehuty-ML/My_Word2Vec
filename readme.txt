@@ -32,3 +32,13 @@
     d. 运行命令：
         python train.py --data_path=./data/train.cbow.data --dictionary_path=./data/dictionary.json --network_name=w2v --embedding_size=128 --structure=cbow --window=4 --cbow_mean=True --max_epoch=10 --batch_size=1000 --num_sampled=100 --optimizer_name=adam --learning_rate=0.001 --regularization=0.00001 --checkpoint_dir=./running/model/cbow --checkpoint_per_batch=100 --summary_dir=./running/graph/cbow
         python train.py --data_path=./data/train.skipgram.data --dictionary_path=./data/dictionary.json --network_name=w2v --embedding_size=128 --structure=skipgram --window=4 --max_epoch=10 --batch_size=1000 --num_sampled=100 --optimizer_name=adam --learning_rate=0.001 --regularization=0.00001 --checkpoint_dir=./running/model/skipgram --checkpoint_per_batch=100 --summary_dir=./running/graph/skipgram
+
+
+6. 理解一下word2vec负采样的执行过程（以CBOW为例）
+    运行命令：
+        python train.py --data_path=./data/train.cbow.data --dictionary_path=./data/dictionary.json --network_name=w2v --embedding_size=128 --structure=cbow
+         --window=4 --cbow_mean=True --max_epoch=10 --batch_size=1000 --num_sampled=100 --optimizer_name=adam --learning_rate=0.001 --regularization=0.00001
+          --checkpoint_dir=./running/model/cbow --checkpoint_per_batch=100 --summary_dir=./running/graph/cbow
+    a. 普通全连接的执行过程（普通损失函数的构建过程）
+    b. 负采样的执行过程
+
